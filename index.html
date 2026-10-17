@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#111012">
+
+<title>MORDIYX AI — Create Beyond Limits</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --bg: #111012;
+  --panel: #1a181c;
+  --panel2: #211e23;
+  --text: #f7f4f7;
+  --muted: #aaa4af;
+  --line: rgba(255,255,255,.09);
+  --pink: #f1b9ee;
+  --peach: #ffd2a2;
+  --purple: #a995ff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(ellipse at 80% 8%, rgba(151,105,157,.15), transparent 35%),
+    radial-gradient(ellipse at 0% 40%, rgba(105,78,128,.12), transparent 35%),
+    var(--bg);
+  color: var(--text);
+  font-family: Inter, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.wrap {
+  width: min(1120px, 92%);
+  margin: auto;
+}
+
+/* NAVIGATION */
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(17,16,18,.88);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav-inner {
+  min-height: 76px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.brand {
+  font-size: 23px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+}
+
+.brand span {
+  color: #ff646e;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 23px;
+  color: #d0cbd2;
+  font-size: 13px;
+}
+
+.nav-links a:hover {
+  color: white;
+}
+
+.nav-button {
+  border: 0;
+  padding: 12px 19px;
+  border-radius: 30px;
+  color: #18131a;
+  font-weight: 800;
+  background: linear-gradient(110deg, var(--pink), var(--peach));
+}
+
+/* HERO */
+
+.hero {
+  padding: 84px 0 60px;
+  min-height: 550px;
+  display: grid;
+  grid-template-columns: 1.12fr .88fr;
+  gap: 34px;
+  align-items: center;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(241,185,238,.24);
+  background: rgba(241,185,238,.07);
+  color: #f4c8ef;
+  padding: 8px 13px;
+  border-radius: 40px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.dot {
+  height: 7px;
+  width: 7px;
+  background: #c9ffb7;
+  border-radius: 50%;
+  box-shadow: 0 0 12px #c9ffb7;
+}
+
+h1 {
+  margin: 25px 0 20px;
+  font-size: clamp(42px, 6vw, 68px);
+  letter-spacing: -3.2px;
+  line-height: 1.04;
+  font-weight: 900;
+}
+
+.gradient-text {
+  color: transparent;
+  background: linear-gradient(100deg, #f2b9ee 0%, #ffd4a6 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.hero-copy {
+  color: #bdb6c1;
+  max-width: 540px;
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.primary-btn,
+.secondary-btn {
+  border-radius: 40px;
+  padding: 14px 21px;
+  font-weight: 800;
+  font-size: 13px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+}
+
+.primary-btn {
+  color: #191319;
+  background: linear-gradient(110deg, #f0b9ed, #ffd2a2);
+  border: 0;
+  box-shadow: 0 5px 35px rgba(227,164,220,.12);
+}
+
+.secondary-btn {
+  color: white;
+  background: rgba(255,255,255,.04);
+  border: 1px solid var(--line);
+}
+
+.hero-note {
+  color: #918994;
+  margin-top: 20px;
+  font-size: 11px;
+}
+
+/* HERO VISUAL */
+
+.visual {
+  min-height: 340px;
+  position: relative;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 30px;
+  overflow: hidden;
+  padding: 24px;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(226,161,224,.25), transparent 33%),
+    linear-gradient(145deg, #2c2434, #17151c 65%);
+  box-shadow: 0 25px 80px rgba(0,0,0,.3);
+}
+
+.visual::before {
+  content: "";
+  position: absolute;
+  width: 230px;
+  height: 230px;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: linear-gradient(130deg, #f2b9ee, #ffd2a2);
+  filter: blur(80px);
+  opacity: .22;
+}
+
+.visual-top {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #c8becd;
+}
+
+.visual-label {
+  border: 1px solid rgba(255,255,255,.13);
+  padding: 6px 10px;
+  border-radius: 20px;
+}
+
+.orb-stage {
+  position: relative;
+  height: 210px;
+  display: grid;
+  place-items: center;
+}
+
+.orb {
+  height: 145px;
+  width: 145px;
+  border-radius: 34% 66% 60% 40% / 40% 40% 60% 60%;
+  background:
+    radial-gradient(circle at 30% 25%, #fff2ff, transparent 16%),
+    linear-gradient(145deg, #f2b9ee, #a995ff 52%, #302039);
+  box-shadow:
+    inset -20px -20px 45px rgba(0,0,0,.35),
+    0 0 45px rgba(223,162,229,.3);
+  transform: rotate(-15deg);
+  animation: float 5s ease-in-out infinite;
+}
+
+.ring {
+  position: absolute;
+  width: 230px;
+  height: 75px;
+  border: 1px solid rgba(255,214,246,.55);
+  border-radius: 50%;
+  transform: rotate(-25deg);
+}
+
+.ring.two {
+  width: 250px;
+  height: 95px;
+  transform: rotate(48deg);
+  border-color: rgba(255,212,162,.4);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(-15deg); }
+  50% { transform: translateY(-9px) rotate(-8deg); }
+}
+
+.visual-bottom {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  border-top: 1px solid var(--line);
+  padding-top: 15px;
+}
+
+.visual-bottom strong {
+  display: block;
+  font-size: 13px;
+}
+
+.visual-bottom small {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+/* SECTION */
+
+section {
+  scroll-margin-top: 90px;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 18px;
+  margin-bottom: 27px;
+}
+
+.kicker {
+  color: #d6aee0;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: clamp(28px, 4vw, 39px);
+  line-height: 1.2;
+  letter-spacing: -1.2px;
+  margin-top: 8px;
+}
+
+.section-sub {
+  color: var(--muted);
+  font-size: 13px;
+  max-width: 380px;
+}
+
+/* SERVICES */
+
+.services-section {
+  padding: 58px 0 76px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 16px;
+}
+
+.service-card {
+  background: linear-gradient(150deg, rgba(38,33,42,.96), rgba(24,22,27,.97));
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  overflow: hidden;
+  transition: transform .22s, border-color .22s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(241,185,238,.38);
+}
+
+.card-art {
+  min-height: 150px;
+  padding: 18px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-art::before,
+.card-art::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(35px);
+  opacity: .5;
+}
+
+.card-art::before {
+  width: 110px;
+  height: 110px;
+  background: var(--art1, #c17ad7);
+  top: 10px;
+  left: 10px;
+}
+
+.card-art::after {
+  width: 100px;
+  height: 100px;
+  background: var(--art2, #eab2b4);
+  right: 8px;
+  bottom: 0;
+}
+
+.art-1 { --art1:#eaa5ee; --art2:#8c80ff; }
+.art-2 { --art1:#7c7df7; --art2:#f3a8d7; }
+.art-3 { --art1:#e4a2a9; --art2:#9b82f7; }
+.art-4 { --art1:#ffc58b; --art2:#e9a8d8; }
+.art-5 { --art1:#a9a0ff; --art2:#8ddfd0; }
+.art-6 { --art1:#83cfff; --art2:#bda0ff; }
+.art-7 { --art1:#8de1d0; --art2:#b2a0ff; }
+
+.art-icon {
+  z-index: 1;
+  width: 86px;
+  height: 86px;
+  display: grid;
+  place-items: center;
+  border-radius: 25px;
+  background: rgba(20,17,24,.58);
+  border: 1px solid rgba(255,255,255,.25);
+  backdrop-filter: blur(12px);
+  font-size: 39px;
+  box-shadow: 0 12px 35px rgba(0,0,0,.2);
+}
+
+.art-caption {
+  z-index: 1;
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: white;
+  background: rgba(15,13,18,.65);
+  padding: 6px 9px;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 20px;
+}
+
+.card-body {
+  padding: 19px;
+}
+
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.card-number {
+  font-size: 10px;
+  color: #c9a5d3;
+  letter-spacing: 1px;
+  font-weight: 800;
+}
+
+.card-body h3 {
+  font-size: 17px;
+  line-height: 1.4;
+  margin-bottom: 9px;
+}
+
+.card-body p {
+  color: #aaa3b0;
+  font-size: 12px;
+  line-height: 1.8;
+  min-height: 65px;
+}
+
+.card-meta {
+  margin-top: 17px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.cost {
+  font-size: 12px;
+  color: #f5c8ee;
+  font-weight: 800;
+}
+
+.cost small {
+  display: block;
+  font-weight: 500;
+  font-size: 9px;
+  color: #99909f;
+}
+
+.enter-btn {
+  border: 1px solid rgba(242,185,238,.3);
+  background: rgba(242,185,238,.09);
+  color: #f4d5f2;
+  padding: 9px 12px;
+  border-radius: 24px;
+  font-size: 10px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.enter-btn:hover {
+  background: linear-gradient(110deg, var(--pink), var(--peach));
+  color: #171219;
+}
+
+/* CREDIT SECTION */
+
+.credits-section {
+  padding: 65px 0 75px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(110deg, rgba(231,170,226,.045), rgba(255,206,160,.035));
+}
+
+.credit-intro {
+  max-width: 660px;
+  margin-bottom: 28px;
+}
+
+.credit-intro p {
+  color: var(--muted);
+  margin-top: 12px;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.credit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 15px;
+}
+
+.credit-card {
+  background: #1b181e;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 23px;
+  position: relative;
+}
+
+.credit-card.featured {
+  border-color: rgba(241,185,238,.6);
+  background: linear-gradient(150deg, #2b2130, #1b181e 80%);
+}
+
+.pack-label {
+  color: #bdb3c2;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.pack-credits {
+  margin-top: 12px;
+  font-size: 29px;
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+.pack-credits span {
+  color: #d6a8d9;
+  font-size: 13px;
+  letter-spacing: 0;
+}
+
+.pack-price {
+  font-size: 22px;
+  font-weight: 800;
+  margin-top: 8px;
+}
+
+.pack-note {
+  font-size: 11px;
+  color: #a69eaa;
+  margin: 7px 0 20px;
+}
+
+.pack-btn {
+  width: 100%;
+  border: 1px solid rgba(255,255,255,.15);
+  background: rgba(255,255,255,.06);
+  color: white;
+  padding: 12px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.featured .pack-btn {
+  color: #1b151c;
+  border: 0;
+  background: linear-gradient(110deg, var(--pink), var(--peach));
+}
+
+.credit-footnote {
+  margin-top: 18px;
+  color: #928a98;
+  font-size: 10px;
+  line-height: 1.8;
+}
+
+/* HOW IT WORKS */
+
+.how-section {
+  padding: 70px 0;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 15px;
+  margin-top: 28px;
+}
+
+.step {
+  padding: 22px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.025);
+  border-radius: 18px;
+}
+
+.step-num {
+  color: #e9b4e6;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.step h3 {
+  font-size: 15px;
+  margin: 10px 0 7px;
+}
+
+.step p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* FOOTER */
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 30px 0;
+  color: #9b939f;
+  font-size: 11px;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+footer strong {
+  color: #f2c2ed;
+}
+
+/* DEMO MODAL */
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  background: rgba(0,0,0,.7);
+  backdrop-filter: blur(7px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+}
+
+.modal-backdrop.show {
+  display: flex;
+}
+
+.modal {
+  width: min(440px,100%);
+  padding: 25px;
+  background: #201b24;
+  border: 1px solid rgba(241,185,238,.3);
+  border-radius: 23px;
+  box-shadow: 0 25px 80px rgba(0,0,0,.5);
+}
+
+.modal h3 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.modal p {
+  font-size: 13px;
+  color: #b8afbd;
+  line-height: 1.8;
+  margin-bottom: 18px;
+}
+
+.modal-close {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  border: 0;
+  border-radius: 30px;
+  background: linear-gradient(110deg, var(--pink), var(--peach));
+  font-weight: 800;
+}
+
+/* MOBILE */
+
+@media(max-width: 760px) {
+  .nav-inner {
+    min-height: 68px;
+  }
+
+  .brand {
+    font-size: 19px;
+  }
+
+  .nav-links {
+    gap: 12px;
+  }
+
+  .nav-links .hide-mobile {
+    display: none;
+  }
+
+  .nav-button {
+    padding: 10px 13px;
+    font-size: 11px;
+  }
+
+  .hero {
+    padding: 55px 0 35px;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    min-height: auto;
+  }
+
+  h1 {
+    font-size: clamp(42px, 11vw, 60px);
+    letter-spacing: -2.5px;
+  }
+
+  .hero-copy {
+    font-size: 14px;
+  }
+
+  .visual {
+    min-height: 315px;
+  }
+
+  .services-section,
+  .credits-section,
+  .how-section {
+    padding: 48px 0;
+  }
+
+  .section-head {
+    display: block;
+  }
+
+  .section-sub {
+    margin-top: 12px;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 11px;
+  }
+
+  .card-art {
+    min-height: 115px;
+  }
+
+  .art-icon {
+    width: 65px;
+    height: 65px;
+    font-size: 30px;
+    border-radius: 20px;
+  }
+
+  .card-body {
+    padding: 13px;
+  }
+
+  .card-body h3 {
+    font-size: 14px;
+  }
+
+  .card-body p {
+    font-size: 11px;
+    min-height: 88px;
+  }
+
+  .card-meta {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .enter-btn {
+    width: 100%;
+    padding: 10px 5px;
+  }
+
+  .credit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media(max-width: 370px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-body p {
+    min-height: auto;
+  }
+
+  .card-meta {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .enter-btn {
+    width: auto;
+    padding: 9px 12px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a href="#" class="brand">MORDI<span>YX</span></a>
+
+    <div class="nav-links">
+      <a href="#services" class="hide-mobile">AI TOOLS</a>
+      <a href="#credits">CREDITS</a>
+      <a href="#how" class="hide-mobile">HOW IT WORKS</a>
+      <button class="nav-button" onclick="showModal('Your MORDIYX AI workspace')">
+        Get Started ↗
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+  <header class="wrap hero">
+    <div>
+      <div class="eyebrow">
+        <span class="dot"></span>
+        THE CREATIVE AI WORKSPACE
+      </div>
+
+      <h1>
+        Imagine more.<br>
+        <span class="gradient-text">Create beyond.</span>
+      </h1>
+
+      <p class="hero-copy">
+        One creative workspace for AI images, videos, smart editing,
+        advertising and game-ready 2D &amp; 3D assets.
+        Start with credits. Create at your own pace.
+      </p>
+
+      <div class="hero-actions">
+        <a class="primary-btn" href="#services">Explore AI Studios ↗</a>
+        <a class="secondary-btn" href="#credits">View Credit Packs</a>
+      </div>
+
+      <p class="hero-note">
+        PAY AS YOU CREATE · NO REQUIRED MONTHLY SUBSCRIPTION
+      </p>
+    </div>
+
+    <div class="visual">
+      <div class="visual-top">
+        <span class="visual-label">MORDIYX LAB / 01</span>
+        <span>✦ CREATIVE ENGINE</span>
+      </div>
+
+      <div class="orb-stage">
+        <div class="ring"></div>
+        <div class="ring two"></div>
+        <div class="orb"></div>
+      </div>
+
+      <div class="visual-bottom">
+        <div>
+          <strong>One creative universe.</strong>
+          <small>Seven specialized studios</small>
+        </div>
+        <div>
+          <strong>✦ AI POWERED</strong>
+          <small>Credit-based access</small>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="services-section" id="services">
+    <div class="wrap">
+
+      <div class="section-head">
+        <div>
+          <div class="kicker">THE TOOLKIT</div>
+          <h2>Choose your creative studio.</h2>
+        </div>
+
+        <p class="section-sub">
+          Seven dedicated tools. Each studio has its own workflow
+          and estimated credit cost.
+        </p>
+      </div>
+
+      <div class="services-grid">
+
+        <!-- 1: IMAGE CREATOR -->
+        <article class="service-card">
+          <div class="card-art art-1">
+            <div class="art-icon">▧</div>
+            <span class="art-caption">IMAGE LAB</span>
+          </div>
+
+          <div class="card-body">
+            <div class="card-top"><span class="card-number">STUDIO 01</span></div>
+            <h3>AI Image Creator</h3>
+            <p>
+              Create concept art, posters, thumbnails, product visuals
+              and social media designs from prompts.
+            </p>
+
+            <div class="card-meta">
+              <div class="cost">10 credits <small>per image · demo estimate</small></div>
+              <button class="enter-btn" onclick="showModal('AI Image Creator')">
+                ENTER STUDIO ↗
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2: VIDEO GENERATOR -->
+        <article class="service-card">
+          <div class="card-art art-2">
+            <div class="art-icon">▷</div>
+            <span class="art-caption">MOTION LAB</span>
+          </div>
+
+          <div class="card-body">
+            <div class="card-top"><span class="card-number">STUDIO 02</span></div>
+            <h3>AI Video Creator</h3>
+            <p>
+              Turn text or images into short cinematic videos,
+              product clips and creative scenes.
+            </p>
+
+            <div class="card-meta">
+              <div class="cost">50 credits <small>per short clip · demo estimate</small></div>
+              <button class="enter-btn" onclick="showModal('AI Video Creator')">
+                ENTER STUDIO ↗
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3: AUTO VIDEO EDITOR -->
+        <article class="service-card">
+          <div class="card-art art-3">
+            <div class="art-icon">◫</div>
+            <span class="art-caption">EDIT SUITE</span>
+          </div>
+
+          <div class="card-body">
+            <div class="card-top"><span class="card-number">STUDIO 03</span></div>
+            <h3>Auto Video Editor</h3>
+            <p>
+              Find highlights, cut silence, add captions and prepare
+              clips for Shorts, Reels and other formats.
+            </p>
+
+            <div class="card-meta">
+              <div class="cost">30 credits <small>per edit job · demo estimate</small></div>
+              <button class="enter-btn" onclick="showModal('Auto Video Editor')">
+                ENTER STUDIO ↗
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4: AD MAKER -->
+        <article class="service-card">
+          <div class="card-art art-4">
+            <div class="art-icon">✳</div>
+            <span class="art-caption">AD CREATIVE</span>
+          </div>
+
+          <div class="card-body">
+            <div class="card-top"><span class="card-number">STUDIO 04</span></div>
+            <h3>AI Ad Maker</h3>
+            <p>
+              Generate ad concepts, headlines, product descriptions,
+              campaign copy and calls to action.
+            </p>
+
+            <div class="card-meta">
+              <div class="cost">8 credits <small>per ad draft · demo estimate</small></div>
+              <button class="enter-btn" onclick="showModal('AI Ad Maker')">
+                ENTER STUDIO ↗
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5: 2D ASSET CREATOR -->
+        <article class="service-card">
+          <div class="card-art art-5">
+            <div class="art-icon">◈</div>
+            <span class="art-caption">2D ASSET LAB</span>
+          </div>
+
+          <div class="card-body">
+            <div class="card-top"><span class="card-number">STUDIO 05</span></div>
+            <h3>2D Asset Creator</h3>
+            <p>
+              Create game sprites, icons, character concepts,
+              backgrounds and visual assets.
+            </p>
+
+            <div class="card-meta">
+              <div class="cost">12 credits <small>per asset · demo estimate</small></div>
+              <button class="enter-btn" onclick="showModal('2D Asset Creator')">
+                ENTER STUDIO ↗
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 6: 3D ASSET CREATOR -->
+        <article class="service-card">
+          <div class="card-art art-6">
+            <div class="art-icon">⬡</div>
+            <span class="art-caption">3D WORKSHOP</span>
+          </div>
+
+          <div class="card-body">
+            <div class="card-top"><span class="card-number">STUDIO 06</span></div>
+            <h3>3D Asset Creator</h3>
+            <p>
+              Create 3D characters, creatures, props and environment
+              assets from text or reference images.
+            </p>
+
+            <div class="card-meta">
+              <div class="cost">80 credits <small>per model · demo estimate</small></div>
+              <button class="enter-btn" onclick="showModal('3D Asset Creator')">
+                ENTER STUDIO ↗
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 7: AUTO RIGGING -->
+        <article class="service-card">
+          <div class="card-art art-7">
+            <div class="art-icon">⌘</div>
+            <span class="art-caption">RIGGING LAB</span>
+          </div>
+
+          <div class="card-body">
+            <div class="card-top"><span class="card-number">STUDIO 07</span></div>
+            <h3>Auto Rigging Studio</h3>
+            <p>
+              Prepare supported 3D characters with a skeleton and
+              rigging workflow for animation.
+            </p>
+
+            <div class="card-meta">
+              <div class="cost">40 credits <small>per rig job · demo estimate</small></div>
+              <button class="enter-btn" onclick="showModal('Auto Rigging Studio')">
+                ENTER STUDIO ↗
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CREDIT RECHARGE -->
+  <section class="credits-section" id="credits">
+    <div class="wrap">
+
+      <div class="credit-intro">
+        <div class="kicker">SIMPLE. FLEXIBLE. YOURS.</div>
+        <h2>Recharge credits.<br><span class="gradient-text">Create on your terms.</span></h2>
+
+        <p>
+          No required monthly subscription. Choose a credit pack and
+          spend credits when you use a studio. Expensive tasks may cost
+          more depending on model, quality, duration and output settings.
+        </p>
+      </div>
+
+      <div class="credit-grid">
+
+        <article class="credit-card">
+          <div class="pack-label">STARTER PACK</div>
+          <div class="pack-credits">100 <span>CREDITS</span></div>
+          <div class="pack-price">$4.99</div>
+          <p class="pack-note">For trying out the studios.</p>
+          <button class="pack-btn" onclick="showModal('100-credit Starter Pack')">
+            SELECT PACK ↗
+          </button>
+        </article>
+
+        <article class="credit-card featured">
+          <div class="pack-label">CREATOR PACK · POPULAR</div>
+          <div class="pack-credits">500 <span>CREDITS</span></div>
+          <div class="pack-price">$19.99</div>
+          <p class="pack-note">For regular creative projects.</p>
+          <button class="pack-btn" onclick="showModal('500-credit Creator Pack')">
+            SELECT PACK ↗
+          </button>
+        </article>
+
+        <article class="credit-card">
+          <div class="pack-label">STUDIO PACK</div>
+          <div class="pack-credits">1,500 <span>CREDITS</span></div>
+          <div class="pack-price">$49.99</div>
+          <p class="pack-note">For larger creative workflows.</p>
+          <button class="pack-btn" onclick="showModal('1500-credit Studio Pack')">
+            SELECT PACK ↗
+          </button>
+        </article>
+
+      </div>
+
+      <p class="credit-footnote">
+        Demo prices only—not final offers. Credit costs and pack prices
+        must be calibrated against actual AI API costs before launch.
+        No payment is collected by this demo. Final credit expiry,
+        refunds and purchase terms must be clearly disclosed.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-section" id="how">
+    <div class="wrap">
+
+      <div class="kicker">THREE SIMPLE STEPS</div>
+      <h2>From idea to creation.</h2>
+
+      <div class="steps">
+        <article class="step">
+          <div class="step-num">STEP 01</div>
+          <h3>Choose a studio</h3>
+          <p>Select image, video, editing, ads, 2D, 3D or rigging.</p>
+        </article>
+
+        <article class="step">
+          <div class="step-num">STEP 02</div>
+          <h3>Set your creation</h3>
+          <p>Enter a prompt, upload supported input and choose output settings.</p>
+        </article>
+
+        <article class="step">
+          <div class="step-num">STEP 03</div>
+          <h3>Use credits &amp; export</h3>
+          <p>Review the credit cost before starting and download supported results.</p>
+        </article>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div><strong>MORDIYX AI</strong> · Create beyond limits.</div>
+    <div>AI creation tools · Credit-based access</div>
+    <div>© <span id="year"></span> MORDIYX</div>
+  </div>
+</footer>
+
+<!-- DEMO POPUP -->
+<div class="modal-backdrop" id="modalBackdrop" onclick="closeOutside(event)">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <h3 id="modalTitle">Coming soon</h3>
+    <p id="modalText">
+      This studio is part of the website design preview.
+      Its real AI connection will be added later.
+    </p>
+    <button class="modal-close" onclick="closeModal()">Got it</button>
+  </div>
+</div>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
+function showModal(name) {
+  document.getElementById("modalTitle").textContent = name;
+
+  document.getElementById("modalText").textContent =
+    "This is a visual prototype of " + name +
+    ". The real AI generation, account credits and secure checkout " +
+    "will be connected after the backend and API integrations are ready. " +
+    "No payment will be taken from this preview.";
+
+  document.getElementById("modalBackdrop").classList.add("show");
+}
+
+function closeModal() {
+  document.getElementById("modalBackdrop").classList.remove("show");
+}
+
+function closeOutside(event) {
+  if (event.target.id === "modalBackdrop") {
+    closeModal();
+  }
+}
+
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Escape") closeModal();
+});
+</script>
+
+</body>
+</html>
